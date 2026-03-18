@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +10,7 @@
 <meta name="description" content="Teng Guo's Home Page">
 
 <!-- Ad Library -->
-<script src="https://acscdn.com/script/aclib.js"></script>
+<script async src="https://acscdn.com/script/aclib.js"></script>
 
 <style>
 body{
@@ -37,9 +36,16 @@ body{
 <!-- Banner Ad -->
 <div style="text-align:center;margin-bottom:20px;">
 <script>
-aclib.runBanner({
-    zoneId: '11083606'
-});
+(function() {
+    function runBanner() {
+        if (typeof aclib !== 'undefined') {
+            aclib.runBanner({ zoneId: '11083606' });
+        } else {
+            setTimeout(runBanner, 100);
+        }
+    }
+    runBanner();
+})();
 </script>
 </div>
 
@@ -108,12 +114,17 @@ Robotics, Multi-Robot Planning, AI, Deep Learning, Robotics Control
 
 <!-- In Page Push Ads -->
 <script>
-aclib.runInPagePush({
-    zoneId: '11083502',
-    maxAds: 2
-});
+(function() {
+    function runPush() {
+        if (typeof aclib !== 'undefined') {
+            aclib.runInPagePush({ zoneId: '11083502', maxAds: 2 });
+        } else {
+            setTimeout(runPush, 100);
+        }
+    }
+    runPush();
+})();
 </script>
 
 </body>
 </html>
-```
