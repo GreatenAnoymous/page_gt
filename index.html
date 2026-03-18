@@ -15,6 +15,7 @@
     <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
 
 
+
     <style>
         body {
             background: #ffffff;
@@ -113,18 +114,13 @@
     </table>
 
     <!-- In Page Push Ads -->
-    <script>
-        (function () {
-            function runPush() {
-                if (typeof aclib !== 'undefined') {
-                    aclib.runInPagePush({ zoneId: '11083502', maxAds: 2 });
-                } else {
-                    setTimeout(runPush, 100);
-                }
-            }
-            runPush();
-        })();
+    <script type="text/javascript">
+        aclib.runInPagePush({
+            zoneId: '11083910',
+            maxAds: 2,
+        });
     </script>
+
 
 </body>
 
