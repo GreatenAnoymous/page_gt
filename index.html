@@ -12,7 +12,8 @@
     <meta name="description" content="Teng Guo's Home Page">
 
     <!-- Ad Library -->
-    <script async src="https://acscdn.com/script/aclib.js"></script>
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
 
     <style>
         body {
@@ -38,20 +39,14 @@
 <body>
 
     <!-- Banner Ad -->
-    <div style="text-align:center;margin-bottom:20px;">
-        <script>
-            (function () {
-                function runBanner() {
-                    if (typeof aclib !== 'undefined') {
-                        aclib.runBanner({ zoneId: '11083606' });
-                    } else {
-                        setTimeout(runBanner, 100);
-                    }
-                }
-                runBanner();
-            })();
+    <div>
+        <script type="text/javascript">
+            aclib.runBanner({
+                zoneId: '11083606',
+            });
         </script>
     </div>
+
 
     <table width="100%" border="0" cellpadding="5">
 
